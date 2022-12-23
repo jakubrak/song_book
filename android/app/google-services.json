@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "530624009783",
+    "project_id": "song-book-83ea4",
+    "storage_bucket": "song-book-83ea4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:530624009783:android:012edc96ba2171e658d1b2",
+        "android_client_info": {
+          "package_name": "com.example.song_book"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "530624009783-kql5q3f6ds9i1j82lj42c0pmhmg40uq9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQailom_QycScQGQ79QKgIQoXe4KRJOX0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "530624009783-kql5q3f6ds9i1j82lj42c0pmhmg40uq9.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "530624009783-q3f1dplsjgde6rq33dk1l0m7u28gjhhi.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.songBook"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
