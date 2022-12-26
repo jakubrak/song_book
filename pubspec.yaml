@@ -38,6 +38,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   firebase_storage: ^11.0.9
   cloud_firestore: ^4.3.0
+  infinite_scroll_pagination: ^3.2.0
 
 dev_dependencies:
   flutter_test:
