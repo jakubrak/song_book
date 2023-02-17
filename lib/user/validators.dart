@@ -11,3 +11,16 @@ String? validateEmail(final String? email) {
 
   return null;
 }
+
+String? validatePassword(final String? password) {
+  if (password == null || password.isEmpty) {
+    return null;
+  }
+
+  // Firebase requirement (https://firebase.google.com/docs/reference/android/com/google/firebase/auth/FirebaseAuthWeakPasswordException)
+  if (password.length < 6) {
+    return 'Za krótkie hasło';
+  }
+
+  return null;
+}

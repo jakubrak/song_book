@@ -66,11 +66,10 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyAGGAGEVrGjNSLRWSVdashpbHh2EKfPdKo',
-    appId: '1:530624009783:ios:199cadcc73795d7158d1b2',
+    appId: '1:530624009783:ios:20262fefb6d7dc9758d1b2',
     messagingSenderId: '530624009783',
     projectId: 'song-book-83ea4',
     storageBucket: 'song-book-83ea4.appspot.com',
-    iosClientId: '530624009783-q3f1dplsjgde6rq33dk1l0m7u28gjhhi.apps.googleusercontent.com',
-    iosBundleId: 'com.example.songBook',
+    iosBundleId: 'app.web.song-book-83ea4',
   );
 }

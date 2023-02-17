@@ -1,4 +1,6 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:song_book/home_page.dart';
 import 'package:song_book/user/forgot_page.dart';
 import 'package:song_book/user/login_page.dart';
 import 'package:song_book/user/register_page.dart';
@@ -11,11 +13,6 @@ class StartPage extends StatefulWidget {
 }
 
 class _StartPageState extends State<StartPage> {
-  @override
-  void initState() {
-    super.initState();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

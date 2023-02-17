@@ -7,12 +7,12 @@ class SongMetadata {
 
   factory SongMetadata.fromJson(Map<String, dynamic> json) =>
       SongMetadata(
-        title: json['title'],
-        author: json['author'],
-        id: json['id'],
+        title: json['title'].toString().trim(),
+        author: json['author'].toString().trim(),
+        id: json['id'].toString().trim(),
       );
 
   final String title;
-  String author;
-  String id;
+  final String author;
+  final String id;
 }
