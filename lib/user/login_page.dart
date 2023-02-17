@@ -23,6 +23,11 @@ class _LoginPageState extends State<LoginPage> {
         title: "Witaj ponownie",
         subtitle: "Podaj nazwę użytkownika i hasło aby się zalogować",
         submitText: "Zaloguj",
+        onSubmit: () async {
+          await widget.authentication.signInWithEmailAndPassword(emailController.text, passwordController.text);
+          if (!mounted) return;
+          Navigator.of(context).pop();
+        },
         children: [
           TextFormField(
             decoration: const InputDecoration(hintText: 'E-mail'),
@@ -36,12 +41,7 @@ class _LoginPageState extends State<LoginPage> {
             obscureText: true,
             controller: passwordController,
           )
-        ],
-        onSubmit: () async {
-          await widget.authentication.signInWithEmailAndPassword(emailController.text, passwordController.text);
-          if (!mounted) return;
-          Navigator.of(context).pop();
-        }
+        ]
     );
   }
 }
