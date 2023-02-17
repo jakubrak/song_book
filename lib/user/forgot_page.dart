@@ -1,12 +1,12 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:song_book/authentication.dart';
 import 'package:song_book/user/validators.dart';
 import 'login_page_template.dart';
 
 class ForgotPasswordPage extends StatefulWidget {
-  static String tag = 'forgot-password-page';
+  const ForgotPasswordPage(this.authentication, {super.key});
 
-  const ForgotPasswordPage({super.key});
+  final Authentication authentication;
 
   @override
   State<ForgotPasswordPage> createState() => _ForgotPasswordPageState();
@@ -22,16 +22,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
       subtitle: "Podaj e-mail powiązany z twoim kontem",
       submitText: 'Wyślij',
       onSubmit: () async {
-        try {
-          await FirebaseAuth.instance.sendPasswordResetEmail(email: emailController.text);
-        } on FirebaseAuthException catch (e) {
-          if (e.code == 'user-not-found') {
-            print('No user found for that email.');
-          } else if (e.code == 'invalid-email') {
-            print('The email address is not valid.');
-          }
-        }
-
+        await widget.authentication.sendPasswordResetEmail(emailController.text);
         if (!mounted) return;
         Navigator.of(context).pop();
       },

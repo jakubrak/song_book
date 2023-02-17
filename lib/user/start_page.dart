@@ -1,18 +1,14 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:song_book/home_page.dart';
+import 'package:song_book/authentication.dart';
 import 'package:song_book/user/forgot_page.dart';
 import 'package:song_book/user/login_page.dart';
 import 'package:song_book/user/register_page.dart';
 
-class StartPage extends StatefulWidget {
-  const StartPage({super.key});
+class StartPage extends StatelessWidget {
+  const StartPage(this.authentication, {super.key});
 
-  @override
-  State<StartPage> createState() => _StartPageState();
-}
+  final Authentication authentication;
 
-class _StartPageState extends State<StartPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,7 +27,7 @@ class _StartPageState extends State<StartPage> {
                           textColor: Colors.white70,
                           padding: const EdgeInsets.all(16.0),
                           onPressed: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => const RegisterPage()));
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => RegisterPage(authentication)));
                           },
                           child: const Text('Utwórz konto')),
                       const SizedBox(height: 10),
@@ -41,7 +37,7 @@ class _StartPageState extends State<StartPage> {
                           textColor: Colors.black87,
                           padding: const EdgeInsets.all(16.0),
                           onPressed: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => const LoginPage()));
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage(authentication)));
                           },
                           child: const Text('Logowanie')),
                       TextButton(
@@ -50,7 +46,7 @@ class _StartPageState extends State<StartPage> {
                               color: Colors.white70,
                             )),
                         onPressed: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => const ForgotPasswordPage()));
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => ForgotPasswordPage(authentication)));
                         },
                       ),
                     ]))));

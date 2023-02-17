@@ -1,5 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:song_book/authentication.dart';
+import 'package:song_book/firebase_authentication_wrapper.dart';
 import 'package:song_book/widget_tree.dart';
 
 
@@ -16,10 +18,12 @@ Future<void> main() async {
   // Get a specific camera from the list of available cameras.
   //final firstCamera = cameras.first;
 
+  Authentication authentication = FirebaseAuthenticationWrapper();
+
   runApp(
     MaterialApp(
       theme: ThemeData.dark(),
-      home: const WidgetTree()
+      home: WidgetTree(authentication)
     ),
   );
 }

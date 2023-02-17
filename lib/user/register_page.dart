@@ -1,12 +1,13 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:song_book/authentication.dart';
 import 'package:song_book/user/validators.dart';
 
-import '../home_page.dart';
 import 'login_page_template.dart';
 
 class RegisterPage extends StatefulWidget {
-  const RegisterPage({super.key});
+  const RegisterPage(this.authentication, {super.key});
+
+  final Authentication authentication;
 
   @override
   State<RegisterPage> createState() => _RegisterPageState();
@@ -29,34 +30,18 @@ class _RegisterPageState extends State<RegisterPage> {
     return null;
   }
 
-  Future signUp() async {
-    try {
-      await Future.delayed(const Duration(seconds: 3));
-
-      await FirebaseAuth.instance.createUserWithEmailAndPassword(
-        email: emailController.text,
-        password: passwordController.text,
-      );
-    } on FirebaseAuthException catch (e) {
-      if (e.code == 'weak-password') {
-        print('The password provided is too weak.');
-      } else if (e.code == 'email-already-in-use') {
-        print('The account already exists for that email.');
-      }
-    } catch (e) {
-      print(e);
-    }
-  }
-
-
-
   @override
   Widget build(BuildContext context) {
     return LoginPageTemplate(
       title: "Witaj",
       subtitle: "Podaj swój e-mail i hasło",
       submitText: "Utwórz konto",
-      onSubmit: signUp,
+      onSubmit: () async {
+        await widget.authentication.signUpWithEmailAndPassword(
+            emailController.text, passwordController.text);
+        if (!mounted) return;
+        Navigator.of(context).pop();
+      },
       children: [
         TextFormField(
           decoration: const InputDecoration(hintText: 'E-mail'),
