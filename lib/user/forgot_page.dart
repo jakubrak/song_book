@@ -23,6 +23,9 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
       submitText: 'Wyślij',
       onSubmit: () async {
         await widget.authentication.sendPasswordResetEmail(emailController.text);
+      },
+      onSubmitDone: () async {
+        await Future.delayed(const Duration(seconds: 1));
         if (!mounted) return;
         Navigator.of(context).pop();
       },

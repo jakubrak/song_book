@@ -39,6 +39,9 @@ class _RegisterPageState extends State<RegisterPage> {
       onSubmit: () async {
         await widget.authentication.signUpWithEmailAndPassword(
             emailController.text, passwordController.text);
+      },
+      onSubmitDone: () async {
+        await Future.delayed(const Duration(seconds: 1));
         if (!mounted) return;
         Navigator.of(context).pop();
       },
