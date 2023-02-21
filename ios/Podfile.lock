@@ -604,12 +604,12 @@ PODS:
   - BoringSSL-GRPC/Interface (0.0.24)
   - camera_avfoundation (0.0.1):
     - Flutter
-  - cloud_firestore (4.3.2):
+  - cloud_firestore (4.4.3):
     - Firebase/Firestore (= 10.3.0)
     - firebase_core
     - Flutter
     - nanopb (< 2.30910.0, >= 2.30908.0)
-  - cloud_functions (4.0.8):
+  - cloud_functions (4.0.11):
     - Firebase/Functions (= 10.3.0)
     - firebase_core
     - Flutter
@@ -627,14 +627,14 @@ PODS:
   - Firebase/Storage (10.3.0):
     - Firebase/CoreOnly
     - FirebaseStorage (~> 10.3.0)
-  - firebase_auth (4.2.6):
+  - firebase_auth (4.2.9):
     - Firebase/Auth (= 10.3.0)
     - firebase_core
     - Flutter
-  - firebase_core (2.5.0):
+  - firebase_core (2.7.0):
     - Firebase/CoreOnly (= 10.3.0)
     - Flutter
-  - firebase_storage (11.0.11):
+  - firebase_storage (11.0.14):
     - Firebase/Storage (= 10.3.0)
     - firebase_core
     - Flutter
@@ -750,6 +750,8 @@ PODS:
     - Libuv-gRPC (= 0.0.10)
   - gRPC-Core/Interface (1.44.0)
   - GTMSessionFetcher/Core (3.0.0)
+  - image_picker_ios (0.0.1):
+    - Flutter
   - leveldb-library (1.22.1)
   - Libuv-gRPC (0.0.10):
     - Libuv-gRPC/Implementation (= 0.0.10)
@@ -775,6 +777,7 @@ DEPENDENCIES:
   - firebase_core (from `.symlinks/plugins/firebase_core/ios`)
   - firebase_storage (from `.symlinks/plugins/firebase_storage/ios`)
   - Flutter (from `Flutter`)
+  - image_picker_ios (from `.symlinks/plugins/image_picker_ios/ios`)
   - path_provider_foundation (from `.symlinks/plugins/path_provider_foundation/ios`)
 
 SPEC REPOS:
@@ -817,19 +820,21 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/firebase_storage/ios"
   Flutter:
     :path: Flutter
+  image_picker_ios:
+    :path: ".symlinks/plugins/image_picker_ios/ios"
   path_provider_foundation:
     :path: ".symlinks/plugins/path_provider_foundation/ios"
 
 SPEC CHECKSUMS:
   abseil: ebe5b5529fb05d93a8bdb7951607be08b7fa71bc
   BoringSSL-GRPC: 3175b25143e648463a56daeaaa499c6cb86dad33
-  camera_avfoundation: 07c77549ea54ad95d8581be86617c094a46280d9
-  cloud_firestore: 99bf8e4f9094070ec33df080ca432137b7d9ae2f
-  cloud_functions: a2726f70f64877eb8ba47e3bd0e4e52f6e8bfc8e
+  camera_avfoundation: 82dc5597033fe2dcdcca6e41f7e464d0855e74ad
+  cloud_firestore: 94326bb743acbfe43c68f933dab8a094e84d5849
+  cloud_functions: c47b0379bca7f5f60884a27696248459de0a1f6b
   Firebase: f92fc551ead69c94168d36c2b26188263860acd9
-  firebase_auth: b196f91b4f7c6d72015c3c12aaa82eb6972b2c2c
-  firebase_core: f95c8bbe65213d406d592573ad42a12d64849cb8
-  firebase_storage: 31bd20813d7c4780b1075d2d069d8338291c39c1
+  firebase_auth: 4e8c693e848ed13b263de2d702d55fa82ed04a79
+  firebase_core: 128d8c43c3a453a4a67463314fc3761bedff860b
+  firebase_storage: bdbef04ce485eb426152016c735736bc3615b8c0
   FirebaseAppCheckInterop: 9fc57dfa08f0abb737b185ea065422b55355c909
   FirebaseAuth: 0e415d29d846c1dce2fb641e46f35e9888d9bec6
   FirebaseAuthInterop: 7a766bd56971347e0de4b7674aaa62ddc7820097
@@ -846,10 +851,11 @@ SPEC CHECKSUMS:
   "gRPC-C++": 9675f953ace2b3de7c506039d77be1f2e77a8db2
   gRPC-Core: 943e491cb0d45598b0b0eb9e910c88080369290b
   GTMSessionFetcher: c1edebe64e9fb4e8f6415d018edf1fd3eac074a1
+  image_picker_ios: 58b9c4269cb176f89acea5e5d043c9358f2d25f8
   leveldb-library: 50c7b45cbd7bf543c81a468fe557a16ae3db8729
   Libuv-gRPC: 55e51798e14ef436ad9bc45d12d43b77b49df378
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
-  path_provider_foundation: 37748e03f12783f9de2cb2c4eadfaa25fe6d4852
+  path_provider_foundation: c68054786f1b4f3343858c1e1d0caaded73f0be9
   PromisesObjC: ab77feca74fa2823e7af4249b8326368e61014cb
 
 PODFILE CHECKSUM: ef19549a9bc3046e7bb7d2fab4d021637c0c58a3
